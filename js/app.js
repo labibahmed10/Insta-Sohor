@@ -1,3 +1,9 @@
+const loadPosts = async () => {
+  let data = await fetch("../data/posts.json");
+  posts = await data.json();
+  showPosts(posts);
+};
+
 let posts = [];
 
 const likedPostsId = [];
@@ -26,9 +32,8 @@ const reportPost = (id) => {
   showPosts(remainingPosts);
 };
 
-const displayContent = (text) => {
-  return text.length < 30 ? text : text.slice(0, 28) + "<span class='fw-bold'>... read more</span>";
-};
+const displayContent = (text) =>
+  text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 
 const switchTab = (id) => {
   if (id === "posts") {
@@ -103,17 +108,17 @@ const createPost = (post) => {
 
                 <div class="post__infos">
                   <div class="post__likes">
+
                     <a href="#" class="post__likes-avatar">
                       <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="User Picture" />
                     </a>
-
                     <span>Liked by
                       <a class="post__name--underline" href="#">user123</a> and
                       <a href="#">73 others</a></span>
                   </div>
 
                   <hr/>
-
+                  
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
@@ -155,12 +160,6 @@ const displayReportedPosts = () => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
-};
-
-const loadPosts = async () => {
-  let data = await fetch("../data/posts.json");
-  posts = await data.json();
-  showPosts(posts);
 };
 
 loadPosts();
