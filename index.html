@@ -82,7 +82,7 @@
       </div>
     </main>
 
-    <section class="container w-75">
+    <section id="quespart" class="container w-75">
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -107,9 +107,12 @@
               <strong
                 >Everything in Javascript works inside of a 'Execution Content'.It's like a box where
                 Javascript executes it's codes sychronously one by one, for which we call Javascript a single
-                threaded language.By browsers internal engine for example google chrome's V8, turns the code
-                into a machine language and also uses a compiler parallelly known as 'Turbo engine' which is
-                optimized into a machine code, then byte code and shows as fast as possible to user.</strong
+                threaded language which means it can handle one task at one time.Javascript runs inside the
+                web browsers engine and our code goes through several steps abd gets executed.By browsers
+                internal engine for example google chrome's V8, turns the code internally into a machine
+                language and also uses a compiler parallelly known as 'Turbo engine'.V8 uses JIT(Just In Time)
+                compiler which executes the code into a machine code.Machine code also known as byte code and
+                these byte codes and shows as fast as possible to user.</strong
               >
             </div>
           </div>
@@ -137,12 +140,14 @@
               <strong
                 >We might say "Event Loop" in Javascript is a runtime model which is responsible for executing
                 the code.Javascript is single threaded and runs code from top to bottom.While executing it
-                calls the function synchronously and sends all of them to "Call stack" where in Call stack
-                which function comes last gets out first.But while executing finds any asynchronous
-                function/codes it sends it to the WEB API and while all the synchronous function are done it's
-                work WEB API sends those asynchronous functions to "Queue stack" immediately and "Queue stack"
-                sees if Call stack is empty!..if Yes! then it sends the functions to call stack and executes
-                it.
+                calls the functions synchronously and sends all of them to a side known as "Call stack" where
+                in Call stack which function comes last gets out first and it it known as (LIFO).But while
+                executing if the system finds any asynchronous function/codes its then send those asynchronous
+                functions to the WEB API and while all the synchronous functions are done it's work WEB API
+                sends those asynchronous functions to another side named "Queue stack" immediately.Call stack
+                exucutes all the function of our code one by one and at a time it's get free and then "Queue
+                stack" sees if Call stack is empty!..if Yes! then it sends those aysnchronous functions to
+                call stack and executes it.
               </strong>
             </div>
           </div>
